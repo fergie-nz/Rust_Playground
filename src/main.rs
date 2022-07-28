@@ -30,6 +30,7 @@ fn main() {
         match selection {
             1 => {
                 println!("you chose {temperature}");
+                temp();
             },
             2 => {
                 println!("you chose {fibonacci}");
@@ -38,9 +39,33 @@ fn main() {
                 println!("you chose {christmas}");
             },
             4 => {
-                println!("you chose {temperature}");
+                break;
             },
             _ => {continue}
         }
     }
+}
+
+fn temp() {
+    println!("Enter the C value you want to convert");
+
+    let mut tcelsius = String::new();
+
+    io::stdin()
+        .read_line(&mut tcelsius)
+        .expect("Failed to read line");
+    
+    let tcelsius: i64 = match tcelsius
+    .trim()
+    .parse() {
+        Ok(num) => num,
+        Err(_) => {
+            println!("You must enter a number");
+            return;
+        }
+    };
+
+    let tfarenheight:i64 = (tcelsius*9/5)+32;
+
+    println!("{tcelsius}C converted to farenheit is {tfarenheight}F");
 }
