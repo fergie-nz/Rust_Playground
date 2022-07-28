@@ -5,9 +5,9 @@ fn main() {
 
     loop {
 
-        let temperature:String = "F_to_C";
-        let fibonacci:String = "nth Fibonacci number";
-        let christmas:String = "lyrics";
+        let temperature:&str = "F_to_C";
+        let fibonacci:&str = "nth Fibonacci number";
+        let christmas:&str = "lyrics";
 
         println!("Choose your function:\n1 = {temperature}\n2 = nth {fibonacci}\n3 = {christmas}\n4 = quit");
         
@@ -30,18 +30,17 @@ fn main() {
         match selection {
             1 => {
                 println!("you chose {temperature}");
-            }
+            },
             2 => {
-                println!("you chose {temperature}");
-            }
+                println!("you chose {fibonacci}");
+            },
             3 => {
-                println!("you chose {temperature}");
-            }
+                println!("you chose {christmas}");
+            },
             4 => {
                 println!("you chose {temperature}");
-            }
+            },
+            _ => {continue}
         }
-        
-
     }
 }
